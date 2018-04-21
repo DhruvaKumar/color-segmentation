@@ -6,9 +6,9 @@ Object detection of the red barrel is achieved using color segmentation. The pix
 
 ![alt text](./results/2.3.png)
 
----
 
-### Description of files
+
+## Description of files
 
 `trainLabel.m`: Takes input images and red barrel masks, performs k-means and returns discrete clusters of 4 color classes
 
@@ -20,7 +20,7 @@ Object detection of the red barrel is achieved using color segmentation. The pix
 
 `main.m`: main script to call `myAlgorithm` on a directory of images
 
----
+
 
 ### Usage
 
@@ -28,11 +28,11 @@ Run `main.m`
 
 Specifiy the directory which contains the test images. (Replace ‘data/…’ with the directory name, say ‘test/…’)
 
----
 
-### Color segmentation
 
-#### Training: labeling color classes
+## Color segmentation
+
+### Training: labeling color classes
 
 Four color classes was chosen:
 
@@ -44,7 +44,7 @@ Four color classes was chosen:
 The red barrel pixel class was manually segmented out from the training images. The rest were segmented out using k-means on the `a` and `b` channels of the `LAB` color space. The code is in `trainLabel.m`
 
 
-#### Training: GMM model 
+### Training: GMM model 
 
 Once the color classes were defined, a probability distribution for each color class was modeled using GMMs.
 
@@ -62,7 +62,7 @@ The `a` and `b` channels of the `LAB` space was chosen to model the probability 
 
 The code for training each color class with GMMs is in `trainModel.m` and `gmm.m`
 
-#### Testing
+### Testing
 
 Once the GMM is trained to model the probability distribution of the red barrel pixels, for a new test image, a mask is created for the red barrel pixels which are highly likely to occur.
 
@@ -74,9 +74,9 @@ Metrics used for shape detection - A weighted average of the following normalize
 
 The code for detecting red barrels from a trained GMM model is in `main.m` and `myAlgorithm.m`
 
----
 
-### Results
+
+## Results
 
 ![alt text](./results/1.8.png)
 ![alt text](./results/1.9.png)
@@ -93,6 +93,6 @@ The code for detecting red barrels from a trained GMM model is in `main.m` and `
 ![alt text](./results/10.8.png)
 ![alt text](./results/10.9.png)
 
-### References
+## References
 
 - Dr. Dan Lee's lecture notes
