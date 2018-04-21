@@ -1,0 +1,8 @@
+models/
+OLD/
+results_test/
+submission/
+test/
+src/
+model*
+notes.md
